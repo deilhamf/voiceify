@@ -1,0 +1,172 @@
+/* Import font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Style untuk umum */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Style untuk hero section */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('gambar/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+/* Overlay gradient untuk hero */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #010758, #490d61);
+    opacity: 0.9;
+}
+
+/* Style untuk container */
+.container {
+    text-align: center;
+    z-index: 1;
+    padding: 0 20px; /* Padding agar konten tidak terlalu dekat dengan tepi layar */
+}
+
+/* Style untuk teks h1 */
+.container h1 {
+    font-size: 45px;
+    font-weight: 500;
+    margin-top: -50px;
+    margin-bottom: 50px;
+}
+
+/* Style untuk teks span dalam h1 */
+.container h1 span {
+    color: #ff2963;
+}
+
+/* Style untuk textarea */
+.container textarea {
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+    background: #403d84;
+    color: #fff;
+    font-size: 15px;
+    outline: 0;
+    border: 0;
+    padding: 20px;
+    border-radius: 10px;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+/* Style untuk placeholder dalam textarea */
+.container textarea::placeholder {
+    font-size: 16px;
+    color: #ddd;
+}
+
+/* Style untuk baris dengan select dropdown dan tombol */
+.container .row {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Penyesuaian tata letak */
+    gap: 20px;
+}
+
+/* Style untuk tombol */
+.container button {
+    background: #ff2963;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 35px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara teks dan ikon */
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+/* Style untuk gambar dalam tombol */
+.container button img {
+    width: 16px;
+    margin-right: 0;
+}
+
+.container button:hover {
+    background-color: #d41e52; /* Warna latar belakang saat tombol dihover */
+}
+
+/* Style untuk select dropdown */
+.container select {
+    flex: 1;
+    color: #fff;
+    background: #403d84;
+    height: 50px;
+    padding: 0 20px;
+    outline: 0;
+    border: 0;
+    border-radius: 35px;
+    appearance: none;
+    background-image: url(gambar/dropdown.png);
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position-x: calc(100% - 20px);
+    background-position-y: 20px;
+}
+
+/* Media queries untuk layar HP */
+@media screen and (max-width: 480px) {
+    .container textarea {
+        height: 100px;
+        font-size: 14px;
+    }
+
+    .container h1 {
+        font-size: 32px; /* Atur ukuran font h1 untuk layar HP */
+    }
+
+    .container .row {
+        display: flex;
+        flex-direction: row; /* Ubah tata letak menjadi satu baris pada layar HP */
+        justify-content: space-between; /* Penyesuaian tata letak agar form select dan tombol berada sebelahan */
+        gap: 20px;
+    }
+
+    .container select {
+        background-position-y: 25px;
+    }
+
+    .container select, .container button {
+        width: calc(50% - 10px); /* Atur lebar elemen menjadi 50% dari container dengan sedikit jarak */
+        max-width: none; /* Hapus maksimum lebar untuk select dropdown dan tombol */
+        height: 60px; /* Atur tinggi form select */
+        text-align: center;
+    }
+
+    /* Posisikan teks dan ikon sebelah kanan satu sama lain di dalam tombol pada layar HP */
+    .container button {
+        padding: 10px 20px; /* Sesuaikan padding untuk penempatan teks dan ikon */
+    }
+
+    .container button img {
+        width: 20px; /* Atur ukuran ikon agar lebih besar */
+    }
+}
